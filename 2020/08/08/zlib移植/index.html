@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>zlib移植 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录zlib库在imx6ull平台上的移植下载源码1http:&#x2F;&#x2F;www.zlib.net&#x2F;  解压1tar zxvf zlib-1.2.11.tar.gz  交叉编译 配置  配置路径 12.&#x2F;configure \    --prefix&#x3D;&#x2F;home&#x2F;imx&#x2F;workspace&#x2F;zlib-1.2.11&amp;#">
+  <meta name="description" content="记录zlib库在arm平台上的移植下载源码1http:&#x2F;&#x2F;www.zlib.net&#x2F;  解压1tar zxvf zlib-1.2.11.tar.gz  交叉编译 配置    配置路径  12.&#x2F;configure \    --prefix&#x3D;&#x2F;home&#x2F;imx&#x2F;workspace&#x2F;zlib-1.2.11&amp;#x">
 <meta property="og:type" content="article">
 <meta property="og:title" content="zlib移植">
 <meta property="og:url" content="http://yoursite.com/2020/08/08/zlib%E7%A7%BB%E6%A4%8D/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="记录zlib库在imx6ull平台上的移植下载源码1http:&#x2F;&#x2F;www.zlib.net&#x2F;  解压1tar zxvf zlib-1.2.11.tar.gz  交叉编译 配置  配置路径 12.&#x2F;configure \    --prefix&#x3D;&#x2F;home&#x2F;imx&#x2F;workspace&#x2F;zlib-1.2.11&amp;#">
+<meta property="og:description" content="记录zlib库在arm平台上的移植下载源码1http:&#x2F;&#x2F;www.zlib.net&#x2F;  解压1tar zxvf zlib-1.2.11.tar.gz  交叉编译 配置    配置路径  12.&#x2F;configure \    --prefix&#x3D;&#x2F;home&#x2F;imx&#x2F;workspace&#x2F;zlib-1.2.11&amp;#x">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-08T15:39:25.000Z">
-<meta property="article:modified_time" content="2020-08-08T15:59:09.579Z">
+<meta property="article:modified_time" content="2020-08-08T16:38:58.496Z">
 <meta property="article:author" content="yhuan416">
 <meta property="article:tag" content="移植">
 <meta property="article:tag" content="zlib">
@@ -172,16 +172,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="记录zlib库在imx6ull平台上的移植"><a href="#记录zlib库在imx6ull平台上的移植" class="headerlink" title="记录zlib库在imx6ull平台上的移植"></a>记录zlib库在imx6ull平台上的移植</h1><h2 id="下载源码"><a href="#下载源码" class="headerlink" title="下载源码"></a>下载源码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;www.zlib.net&#x2F;</span><br></pre></td></tr></table></figure>
+        <h1 id="记录zlib库在arm平台上的移植"><a href="#记录zlib库在arm平台上的移植" class="headerlink" title="记录zlib库在arm平台上的移植"></a>记录zlib库在arm平台上的移植</h1><h2 id="下载源码"><a href="#下载源码" class="headerlink" title="下载源码"></a>下载源码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;www.zlib.net&#x2F;</span><br></pre></td></tr></table></figure>
 
 <h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf zlib-1.2.11.tar.gz</span><br></pre></td></tr></table></figure>
 
 <h2 id="交叉编译"><a href="#交叉编译" class="headerlink" title="交叉编译"></a>交叉编译</h2><ul>
-<li><p>配置</p>
-<ol>
-<li>配置路径 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;configure \</span><br><span class="line">    --prefix&#x3D;&#x2F;home&#x2F;imx&#x2F;workspace&#x2F;zlib-1.2.11&#x2F;arm-dir </span><br></pre></td></tr></table></figure></li>
-<li>修改Makefile<br>找到以下值并进行修改 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CC&#x3D;arm-linux-gnueabihf-gcc</span><br><span class="line">LDSHARED&#x3D;arm-linux-gnueabihf-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map</span><br><span class="line">CPP&#x3D;arm-linux-gnueabihf-gcc -E</span><br><span class="line">AR&#x3D;arm-linux-gnueabihf-ar</span><br><span class="line">RANLIB&#x3D;arm-linux-gnueabihf-ranlib</span><br></pre></td></tr></table></figure></li>
-</ol>
+<li><p>配置  </p>
+<ul>
+<li>配置路径  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;configure \</span><br><span class="line">    --prefix&#x3D;&#x2F;home&#x2F;imx&#x2F;workspace&#x2F;zlib-1.2.11&#x2F;arm-dir </span><br></pre></td></tr></table></figure></li>
+<li>修改Makefile<br>找到以下值并进行修改  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CC&#x3D;arm-linux-gnueabihf-gcc</span><br><span class="line">LDSHARED&#x3D;arm-linux-gnueabihf-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map</span><br><span class="line">CPP&#x3D;arm-linux-gnueabihf-gcc -E</span><br><span class="line">AR&#x3D;arm-linux-gnueabihf-ar</span><br><span class="line">RANLIB&#x3D;arm-linux-gnueabihf-ranlib</span><br></pre></td></tr></table></figure></li>
+</ul>
 </li>
 <li><p>编译</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
@@ -199,7 +199,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>–prefix</td>
+<td>--prefix</td>
 <td>安装路径</td>
 </tr>
 </tbody></table>

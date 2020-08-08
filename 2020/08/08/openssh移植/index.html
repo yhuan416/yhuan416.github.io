@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>openssh移植 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录openssh库在imx6ull平台上的移植下载源码12http:&#x2F;&#x2F;www.openssh.com&#x2F;  https:&#x2F;&#x2F;openbsd.hk&#x2F;pub&#x2F;OpenBSD&#x2F;OpenSSH&#x2F;portable&#x2F;  解压1tar -vxzf openssh-8.2p1.tar.gz  交叉编译 配置123">
+  <meta name="description" content="记录openssh库在arm平台上的移植下载源码12http:&#x2F;&#x2F;www.openssh.com&#x2F;  https:&#x2F;&#x2F;openbsd.hk&#x2F;pub&#x2F;OpenBSD&#x2F;OpenSSH&#x2F;portable&#x2F;  解压1tar -vxzf openssh-8.2p1.tar.gz  交叉编译 配置  12345">
 <meta property="og:type" content="article">
 <meta property="og:title" content="openssh移植">
 <meta property="og:url" content="http://yoursite.com/2020/08/08/openssh%E7%A7%BB%E6%A4%8D/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="记录openssh库在imx6ull平台上的移植下载源码12http:&#x2F;&#x2F;www.openssh.com&#x2F;  https:&#x2F;&#x2F;openbsd.hk&#x2F;pub&#x2F;OpenBSD&#x2F;OpenSSH&#x2F;portable&#x2F;  解压1tar -vxzf openssh-8.2p1.tar.gz  交叉编译 配置123">
+<meta property="og:description" content="记录openssh库在arm平台上的移植下载源码12http:&#x2F;&#x2F;www.openssh.com&#x2F;  https:&#x2F;&#x2F;openbsd.hk&#x2F;pub&#x2F;OpenBSD&#x2F;OpenSSH&#x2F;portable&#x2F;  解压1tar -vxzf openssh-8.2p1.tar.gz  交叉编译 配置  12345">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-08T15:58:29.000Z">
-<meta property="article:modified_time" content="2020-08-08T16:18:01.706Z">
+<meta property="article:modified_time" content="2020-08-08T16:39:04.953Z">
 <meta property="article:author" content="yhuan416">
 <meta property="article:tag" content="移植">
 <meta property="article:tag" content="openssh">
@@ -172,12 +172,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="记录openssh库在imx6ull平台上的移植"><a href="#记录openssh库在imx6ull平台上的移植" class="headerlink" title="记录openssh库在imx6ull平台上的移植"></a>记录openssh库在imx6ull平台上的移植</h1><h2 id="下载源码"><a href="#下载源码" class="headerlink" title="下载源码"></a>下载源码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;www.openssh.com&#x2F;  </span><br><span class="line">https:&#x2F;&#x2F;openbsd.hk&#x2F;pub&#x2F;OpenBSD&#x2F;OpenSSH&#x2F;portable&#x2F;</span><br></pre></td></tr></table></figure>
+        <h1 id="记录openssh库在arm平台上的移植"><a href="#记录openssh库在arm平台上的移植" class="headerlink" title="记录openssh库在arm平台上的移植"></a>记录openssh库在arm平台上的移植</h1><h2 id="下载源码"><a href="#下载源码" class="headerlink" title="下载源码"></a>下载源码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;www.openssh.com&#x2F;  </span><br><span class="line">https:&#x2F;&#x2F;openbsd.hk&#x2F;pub&#x2F;OpenBSD&#x2F;OpenSSH&#x2F;portable&#x2F;</span><br></pre></td></tr></table></figure>
 
 <h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -vxzf openssh-8.2p1.tar.gz</span><br></pre></td></tr></table></figure>
 
 <h2 id="交叉编译"><a href="#交叉编译" class="headerlink" title="交叉编译"></a>交叉编译</h2><ul>
-<li>配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;configure \</span><br><span class="line">    --host&#x3D;arm-linux-gnueabihf \</span><br><span class="line">    --with-libs \</span><br><span class="line">    --with-ssl-dir&#x3D;&#x2F;home&#x2F;imx&#x2F;workspace&#x2F;openssl-1.1.1d&#x2F;arm-dir \</span><br><span class="line">    --with-zlib&#x3D;&#x2F;home&#x2F;imx&#x2F;workspace&#x2F;zlib-1.2.11&#x2F;arm-dir \</span><br><span class="line">    --disable-etc-default-login \</span><br><span class="line">    CC&#x3D;arm-linux-gnueabihf-gcc \</span><br><span class="line">    AR&#x3D;arm-linux-gnueabihf-ar</span><br></pre></td></tr></table></figure></li>
+<li>配置  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;configure \</span><br><span class="line">    --host&#x3D;arm-linux-gnueabihf \</span><br><span class="line">    --with-libs \</span><br><span class="line">    --with-ssl-dir&#x3D;&#x2F;home&#x2F;imx&#x2F;workspace&#x2F;openssl-1.1.1d&#x2F;arm-dir \</span><br><span class="line">    --with-zlib&#x3D;&#x2F;home&#x2F;imx&#x2F;workspace&#x2F;zlib-1.2.11&#x2F;arm-dir \</span><br><span class="line">    --disable-etc-default-login \</span><br><span class="line">    CC&#x3D;arm-linux-gnueabihf-gcc \</span><br><span class="line">    AR&#x3D;arm-linux-gnueabihf-ar</span><br></pre></td></tr></table></figure></li>
 <li>编译<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
 
 </li>
@@ -226,15 +226,15 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>–host</td>
+<td>--host</td>
 <td>目标平台</td>
 </tr>
 <tr>
-<td>–with-ssl-dir</td>
+<td>--with-ssl-dir</td>
 <td>openssl库安装路径</td>
 </tr>
 <tr>
-<td>–with-zlib</td>
+<td>--with-zlib</td>
 <td>zlib库安装路径</td>
 </tr>
 <tr>
