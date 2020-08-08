@@ -429,13 +429,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="记录openssl库在imx6ull平台上的移植"><a href="#记录openssl库在imx6ull平台上的移植" class="headerlink" title="记录openssl库在imx6ull平台上的移植"></a>记录openssl库在imx6ull平台上的移植</h1><h2 id="下载源码"><a href="#下载源码" class="headerlink" title="下载源码"></a>下载源码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.openssl.org&#x2F;source&#x2F;</span><br></pre></td></tr></table></figure>
+        <h1 id="记录openssl库在arm平台上的移植"><a href="#记录openssl库在arm平台上的移植" class="headerlink" title="记录openssl库在arm平台上的移植"></a>记录openssl库在arm平台上的移植</h1><h2 id="下载源码"><a href="#下载源码" class="headerlink" title="下载源码"></a>下载源码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.openssl.org&#x2F;source&#x2F;</span><br></pre></td></tr></table></figure>
 
 <h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf openssl-1.1.1d.tar.gz</span><br></pre></td></tr></table></figure>
 
 <h2 id="交叉编译"><a href="#交叉编译" class="headerlink" title="交叉编译"></a>交叉编译</h2><ul>
-<li><p>配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;Configure \</span><br><span class="line">    linux-armv4 \</span><br><span class="line">    shared \</span><br><span class="line">    no-asm \</span><br><span class="line">    --prefix&#x3D;&#x2F;home&#x2F;imx&#x2F;workspace&#x2F;openssl-1.1.1d&#x2F;arm-dir \</span><br><span class="line">    CROSS_COMPILE&#x3D;arm-linux-gnueabihf-</span><br></pre></td></tr></table></figure></li>
+<li>配置</li>
+</ul>
+<p>imx6ull</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;Configure \</span><br><span class="line">    linux-armv4 \</span><br><span class="line">    shared \</span><br><span class="line">    no-asm \</span><br><span class="line">    --prefix&#x3D;&#x2F;home&#x2F;imx&#x2F;workspace&#x2F;openssl-1.1.1d&#x2F;arm-dir \</span><br><span class="line">    CROSS_COMPILE&#x3D;arm-linux-gnueabihf-</span><br></pre></td></tr></table></figure>
+
+<p>hi3516ev200</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;Configure \</span><br><span class="line">    linux-armv4 \</span><br><span class="line">    shared \</span><br><span class="line">    no-asm \</span><br><span class="line">    no-async \</span><br><span class="line">    --prefix&#x3D;&#x2F;home&#x2F;dopi&#x2F;library&#x2F;openssl-1.1.1d&#x2F;arm-openssl \</span><br><span class="line">    CROSS_COMPILE&#x3D;arm-himix100-linux- \</span><br></pre></td></tr></table></figure>
+<ul>
 <li><p>编译</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
 </li>
@@ -469,7 +475,7 @@
 </tr>
 </tbody></table>
 <h2 id="依赖库"><a href="#依赖库" class="headerlink" title="依赖库"></a>依赖库</h2><p>无</p>
-<h2 id="测试平台"><a href="#测试平台" class="headerlink" title="测试平台"></a>测试平台</h2><p>imx6ull</p>
+<h2 id="测试平台"><a href="#测试平台" class="headerlink" title="测试平台"></a>测试平台</h2><p>imx6ull<br>hi3516ev200</p>
 <hr>
 <p>参考:【正点原子】I.MX6U嵌入式Linux驱动开发指南V1.4.pdf</p>
 
