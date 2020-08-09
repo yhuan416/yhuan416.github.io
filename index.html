@@ -190,81 +190,8 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="记录openssh库在arm平台上的移植"><a href="#记录openssh库在arm平台上的移植" class="headerlink" title="记录openssh库在arm平台上的移植"></a>记录openssh库在arm平台上的移植</h1><h2 id="下载源码"><a href="#下载源码" class="headerlink" title="下载源码"></a>下载源码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;www.openssh.com&#x2F;  </span><br><span class="line">https:&#x2F;&#x2F;openbsd.hk&#x2F;pub&#x2F;OpenBSD&#x2F;OpenSSH&#x2F;portable&#x2F;</span><br></pre></td></tr></table></figure>
-
-<h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -vxzf openssh-8.2p1.tar.gz</span><br></pre></td></tr></table></figure>
-
-<h2 id="交叉编译"><a href="#交叉编译" class="headerlink" title="交叉编译"></a>交叉编译</h2><ul>
-<li>配置  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;configure \</span><br><span class="line">    --host&#x3D;arm-linux-gnueabihf \</span><br><span class="line">    --with-libs \</span><br><span class="line">    --with-ssl-dir&#x3D;&#x2F;home&#x2F;imx&#x2F;workspace&#x2F;openssl-1.1.1d&#x2F;arm-dir \</span><br><span class="line">    --with-zlib&#x3D;&#x2F;home&#x2F;imx&#x2F;workspace&#x2F;zlib-1.2.11&#x2F;arm-dir \</span><br><span class="line">    --disable-etc-default-login \</span><br><span class="line">    CC&#x3D;arm-linux-gnueabihf-gcc \</span><br><span class="line">    AR&#x3D;arm-linux-gnueabihf-ar</span><br></pre></td></tr></table></figure></li>
-<li>编译<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="开发板配置"><a href="#开发板配置" class="headerlink" title="开发板配置"></a>开发板配置</h2><ul>
-<li>创建以下目录</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir &#x2F;usr&#x2F;local&#x2F;bin -p </span><br><span class="line">mkdir &#x2F;usr&#x2F;local&#x2F;sbin -p </span><br><span class="line">mkdir &#x2F;usr&#x2F;local&#x2F;libexec&#x2F; -p </span><br><span class="line">mkdir &#x2F;usr&#x2F;local&#x2F;etc -p</span><br><span class="line">mkdir &#x2F;var&#x2F;run -p </span><br><span class="line">mkdir &#x2F;var&#x2F;empty&#x2F; -p</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>拷贝文件到目标文件夹</p>
-<ul>
-<li>/usr/local/bin : scp sftp ssh ssh-add ssh-agent ssh-keygen ssh-keyscan  </li>
-<li>/usr/local/sbin : sshd  </li>
-<li>/usr/local/etc : moduli ssh_config sshd_config  </li>
-<li>/usr/local/libexec : sftp-server ssh-keysign</li>
-</ul>
-</li>
-<li><p>创建软连接</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;bin&#x2F;</span><br><span class="line">ln -s &#x2F;usr&#x2F;local&#x2F;bin&#x2F;scp</span><br><span class="line">ln -s &#x2F;usr&#x2F;local&#x2F;bin&#x2F;sftp</span><br><span class="line">ln -s &#x2F;usr&#x2F;local&#x2F;bin&#x2F;ssh</span><br><span class="line">ln -s &#x2F;usr&#x2F;local&#x2F;bin&#x2F;ssh-add</span><br><span class="line">ln -s &#x2F;usr&#x2F;local&#x2F;bin&#x2F;ssh-agent</span><br><span class="line">ln -s &#x2F;usr&#x2F;local&#x2F;bin&#x2F;ssh-keygen</span><br><span class="line">ln -s &#x2F;usr&#x2F;local&#x2F;bin&#x2F;ssh-keyscan</span><br><span class="line"></span><br><span class="line">cd &#x2F;sbin&#x2F;</span><br><span class="line">ln -s &#x2F;usr&#x2F;local&#x2F;sbin&#x2F;sshd</span><br></pre></td></tr></table></figure>
-
-<p>软连接创建完成以后就可以直接调用上面 ssh 相关命令了。<br>打开/usr/local/etc/sshd_config 文件，找到“#PermitRootLogin”所在行，将其改为“PermitRootLogin yes”</p>
-<ul>
-<li><p>openssh设置</p>
-<ul>
-<li><p>添加用户</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adduser sshd</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在开发板上生成秘钥文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;usr&#x2F;local&#x2F;etc</span><br><span class="line">ssh-keygen -t rsa -f ssh_host_rsa_key -N &quot;&quot;</span><br><span class="line">ssh-keygen -t dsa -f ssh_host_dsa_key -N &quot;&quot;</span><br><span class="line">ssh-keygen -t ecdsa -f ssh_host_ecdsa_key -N &quot;&quot;</span><br><span class="line">ssh-keygen -t ed25519 -f ssh_host_ed25519_key -N &quot;&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>启动openssh</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;sbin&#x2F;sshd &amp;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="参数含义"><a href="#参数含义" class="headerlink" title="参数含义"></a>参数含义</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>--host</td>
-<td>目标平台</td>
-</tr>
-<tr>
-<td>--with-ssl-dir</td>
-<td>openssl库安装路径</td>
-</tr>
-<tr>
-<td>--with-zlib</td>
-<td>zlib库安装路径</td>
-</tr>
-<tr>
-<td>CC/AR</td>
-<td>指定交叉编译器</td>
-</tr>
-</tbody></table>
-<h2 id="依赖库"><a href="#依赖库" class="headerlink" title="依赖库"></a>依赖库</h2><p><a href="http://blog.yhuan.top/2020/08/08/openssl%E7%A7%BB%E6%A4%8D/">openssl</a><br><a href="http://blog.yhuan.top/2020/08/08/zlib%E7%A7%BB%E6%A4%8D/">zlib</a></p>
-<h2 id="测试平台"><a href="#测试平台" class="headerlink" title="测试平台"></a>测试平台</h2><p>imx6ull</p>
-<hr>
-<p>参考:【正点原子】I.MX6U嵌入式Linux驱动开发指南V1.4.pdf</p>
-
+        <h1 id="记录openssh库在arm平台上的移植"><a href="#记录openssh库在arm平台上的移植" class="headerlink" title="记录openssh库在arm平台上的移植"></a>记录openssh库在arm平台上的移植</h1>
+        
       
 
       
@@ -287,6 +214,7 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
+      
       
 
       
@@ -341,40 +269,8 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="记录zlib库在arm平台上的移植"><a href="#记录zlib库在arm平台上的移植" class="headerlink" title="记录zlib库在arm平台上的移植"></a>记录zlib库在arm平台上的移植</h1><h2 id="下载源码"><a href="#下载源码" class="headerlink" title="下载源码"></a>下载源码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;www.zlib.net&#x2F;</span><br></pre></td></tr></table></figure>
-
-<h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf zlib-1.2.11.tar.gz</span><br></pre></td></tr></table></figure>
-
-<h2 id="交叉编译"><a href="#交叉编译" class="headerlink" title="交叉编译"></a>交叉编译</h2><ul>
-<li><p>配置  </p>
-<ul>
-<li>配置路径  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;configure \</span><br><span class="line">    --prefix&#x3D;&#x2F;home&#x2F;imx&#x2F;workspace&#x2F;zlib-1.2.11&#x2F;arm-dir </span><br></pre></td></tr></table></figure></li>
-<li>修改Makefile<br>找到以下值并进行修改  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CC&#x3D;arm-linux-gnueabihf-gcc</span><br><span class="line">LDSHARED&#x3D;arm-linux-gnueabihf-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map</span><br><span class="line">CPP&#x3D;arm-linux-gnueabihf-gcc -E</span><br><span class="line">AR&#x3D;arm-linux-gnueabihf-ar</span><br><span class="line">RANLIB&#x3D;arm-linux-gnueabihf-ranlib</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>编译</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make install</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="参数含义"><a href="#参数含义" class="headerlink" title="参数含义"></a>参数含义</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>--prefix</td>
-<td>安装路径</td>
-</tr>
-</tbody></table>
-<h2 id="依赖库"><a href="#依赖库" class="headerlink" title="依赖库"></a>依赖库</h2><p>无</p>
-<h2 id="测试平台"><a href="#测试平台" class="headerlink" title="测试平台"></a>测试平台</h2><p>imx6ull</p>
-
+        <h1 id="记录zlib库在arm平台上的移植"><a href="#记录zlib库在arm平台上的移植" class="headerlink" title="记录zlib库在arm平台上的移植"></a>记录zlib库在arm平台上的移植</h1>
+        
       
 
       
@@ -397,6 +293,7 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
+      
       
 
       
@@ -451,57 +348,8 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="记录openssl库在arm平台上的移植"><a href="#记录openssl库在arm平台上的移植" class="headerlink" title="记录openssl库在arm平台上的移植"></a>记录openssl库在arm平台上的移植</h1><h2 id="下载源码"><a href="#下载源码" class="headerlink" title="下载源码"></a>下载源码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.openssl.org&#x2F;source&#x2F;</span><br></pre></td></tr></table></figure>
-
-<h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf openssl-1.1.1d.tar.gz</span><br></pre></td></tr></table></figure>
-
-<h2 id="交叉编译"><a href="#交叉编译" class="headerlink" title="交叉编译"></a>交叉编译</h2><ul>
-<li><p>配置</p>
-<ul>
-<li><p><kbd>imx6ull</kbd></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;Configure \</span><br><span class="line">    linux-armv4 \</span><br><span class="line">    shared \</span><br><span class="line">    no-asm \</span><br><span class="line">    --prefix&#x3D;&#x2F;home&#x2F;imx&#x2F;workspace&#x2F;openssl-1.1.1d&#x2F;arm-dir \</span><br><span class="line">    CROSS_COMPILE&#x3D;arm-linux-gnueabihf-</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><kbd>hi3516ev200</kbd></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;Configure \</span><br><span class="line">    linux-armv4 \</span><br><span class="line">    shared \</span><br><span class="line">    no-asm \</span><br><span class="line">    no-async \</span><br><span class="line">    --prefix&#x3D;&#x2F;home&#x2F;dopi&#x2F;library&#x2F;openssl-1.1.1d&#x2F;arm-openssl \</span><br><span class="line">    CROSS_COMPILE&#x3D;arm-himix100-linux- \</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>编译</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make install</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="参数含义"><a href="#参数含义" class="headerlink" title="参数含义"></a>参数含义</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>linux-armv4</td>
-<td>32位ARM</td>
-</tr>
-<tr>
-<td>shared</td>
-<td>编译动态库</td>
-</tr>
-<tr>
-<td>--prefix</td>
-<td>安装路径</td>
-</tr>
-<tr>
-<td>CROSS_COMPILE</td>
-<td>指定交叉编译器</td>
-</tr>
-</tbody></table>
-<h2 id="依赖库"><a href="#依赖库" class="headerlink" title="依赖库"></a>依赖库</h2><p>无</p>
-<h2 id="测试平台"><a href="#测试平台" class="headerlink" title="测试平台"></a>测试平台</h2><p>imx6ull<br>hi3516ev200</p>
-<hr>
-<p>参考:【正点原子】I.MX6U嵌入式Linux驱动开发指南V1.4.pdf</p>
-
+        <h1 id="记录openssl库在arm平台上的移植"><a href="#记录openssl库在arm平台上的移植" class="headerlink" title="记录openssl库在arm平台上的移植"></a>记录openssl库在arm平台上的移植</h1>
+        
       
 
       
@@ -524,6 +372,7 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
+      
       
 
       
@@ -597,6 +446,7 @@ var _hmt = _hmt || [];
       
     </div>
     <div class="article-info article-info-index">
+      
       
       
       

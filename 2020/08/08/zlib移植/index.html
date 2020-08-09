@@ -20,15 +20,15 @@ var _hmt = _hmt || [];
   <link rel="dns-prefetch" href="https://blog.yhuan.top">
   <title>zlib移植 | yHuan Personal Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录zlib库在arm平台上的移植下载源码1http:&#x2F;&#x2F;www.zlib.net&#x2F;  解压1tar zxvf zlib-1.2.11.tar.gz  交叉编译 配置    配置路径  12.&#x2F;configure \    --prefix&#x3D;&#x2F;home&#x2F;imx&#x2F;workspace&#x2F;zlib-1.2.11&amp;#x">
+  <meta name="description" content="记录zlib库在arm平台上的移植">
 <meta property="og:type" content="article">
 <meta property="og:title" content="zlib移植">
 <meta property="og:url" content="https://blog.yhuan.top/2020/08/08/zlib%E7%A7%BB%E6%A4%8D/index.html">
 <meta property="og:site_name" content="yHuan Personal Blog">
-<meta property="og:description" content="记录zlib库在arm平台上的移植下载源码1http:&#x2F;&#x2F;www.zlib.net&#x2F;  解压1tar zxvf zlib-1.2.11.tar.gz  交叉编译 配置    配置路径  12.&#x2F;configure \    --prefix&#x3D;&#x2F;home&#x2F;imx&#x2F;workspace&#x2F;zlib-1.2.11&amp;#x">
+<meta property="og:description" content="记录zlib库在arm平台上的移植">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-08T15:39:25.000Z">
-<meta property="article:modified_time" content="2020-08-08T16:38:58.496Z">
+<meta property="article:modified_time" content="2020-08-09T04:38:40.326Z">
 <meta property="article:author" content="yhuan416">
 <meta property="article:tag" content="移植">
 <meta property="article:tag" content="zlib">
@@ -194,7 +194,9 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="记录zlib库在arm平台上的移植"><a href="#记录zlib库在arm平台上的移植" class="headerlink" title="记录zlib库在arm平台上的移植"></a>记录zlib库在arm平台上的移植</h1><h2 id="下载源码"><a href="#下载源码" class="headerlink" title="下载源码"></a>下载源码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;www.zlib.net&#x2F;</span><br></pre></td></tr></table></figure>
+        <h1 id="记录zlib库在arm平台上的移植"><a href="#记录zlib库在arm平台上的移植" class="headerlink" title="记录zlib库在arm平台上的移植"></a>记录zlib库在arm平台上的移植</h1><a id="more"></a>
+
+<h2 id="下载源码"><a href="#下载源码" class="headerlink" title="下载源码"></a>下载源码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;www.zlib.net&#x2F;</span><br></pre></td></tr></table></figure>
 
 <h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf zlib-1.2.11.tar.gz</span><br></pre></td></tr></table></figure>
 
@@ -282,6 +284,7 @@ var _hmt = _hmt || [];
 	</div>
 
       
+      
 
       
 
@@ -354,6 +357,13 @@ var _hmt = _hmt || [];
       </div>
     </a>
   
+  <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  <span id="busuanzi_container_page_pv">
+    本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+  </span>
+
   
     <a href="/2020/08/08/openssl%E7%A7%BB%E6%A4%8D/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">openssl移植</div>
@@ -363,9 +373,8 @@ var _hmt = _hmt || [];
 </nav>
 
 
-<span id="busuanzi_container_page_pv">
-  本文阅读量: <span id="busuanzi_value_page_pv"></span>次
-</span>
+
+
 
 
 
@@ -395,6 +404,22 @@ var _hmt = _hmt || [];
 
   
 
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "https://blog.yhuan.top/2020/08/08/zlib%E7%A7%BB%E6%A4%8D/",
+  owner: 'yhuan416',
+  repo: 'yhuan416.github.io',
+  oauth: {
+    client_id: '94866d78826e4010d72c',
+    client_secret: '4c5d3bfa535a8c523222348686395f35c8e685f9',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
 
 
