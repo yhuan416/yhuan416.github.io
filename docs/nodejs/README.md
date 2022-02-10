@@ -1,10 +1,4 @@
-## Nodejs
-
-[官网](https://nodejs.org/en/)
-
-## Windows安装
-
-下载LTS版本后安装即可
+# [Nodejs](https://nodejs.org/en/)
 
 ## Linux安装
 
