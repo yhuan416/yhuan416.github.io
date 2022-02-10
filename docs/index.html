@@ -9,15 +9,55 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
 </head>
 <body>
-  <div id="app">please wait...</div>
+  <style type="text/css">
+    .content {
+       overflow: auto;
+    }
+  </style>
+  <div id="app">loading ...</div>
   <script>
     window.$docsify = {
       name: 'yhuan416',
       repo: 'https://gitee.com/yhuan416',
-      auto2top: true
+      auto2top: false,
+      loadSidebar: true,
+      loadNavbar: true,
+      mergeNavbar: true,
+      coverpage: true,
+      routerMode: 'hash', // default: 'hash'
+      maxLevel: 4,
+      subMaxLevel: 2,
+
+      // search
+      search: {
+          noData: {
+            '/': 'No results!',
+          },
+          paths: 'auto',
+          placeholder: {
+            '/': 'Search',
+          },
+      },
+      count:{
+        countable:true,
+        fontsize:'0.9em',
+        color:'rgb(90,90,90)',
+        language:'chinese'
+      }
     }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+
+  <!-- count -->
+  <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-js.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-clike.min.js"></script>
 </body>
 </html>
