@@ -1,6 +1,3 @@
-<!-- _navbar.md -->
+<!-- docs/_navbar.md -->
 
-* [Home](/)
-
-* Nodejs
-    * [Nodejs](nodejs/)
+* [Nodejs](#/nodejs/)

@@ -1,14 +1,15 @@
 <!-- _coverpage.md -->
 
-# docsify <small>4</small>
+<!-- 背景图片 -->
+
+# docsify <small>4.x</small>
+
+> A magical documentation site generator.
+
+- Simple and lightweight
+- No statically built html files
+- Multiple themes
 
 [Gitee](https://gitee.com/yhuan416/)
 [GitHub](https://github.com/yhuan416/)
-
-<!-- 背景图片 -->
-
-
-
-<!-- 背景色 -->
-
-![color](#f0f0f0)
+[Getting Started](#welcome-to-yhuan39s-docsify)

@@ -1,6 +1,6 @@
-# 记录nodejs安装步骤以及cnpm安装
+## Nodejs
 
-[nodejs官网](https://nodejs.org/en/)
+[官网](https://nodejs.org/en/)
 
 ## Windows安装
 

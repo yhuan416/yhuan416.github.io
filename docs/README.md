@@ -1,3 +1,3 @@
-# Welcome to yhuan's docsify
+## Welcome to yhuan's docsify
 
 > An awesome project.
