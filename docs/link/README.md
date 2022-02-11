@@ -23,6 +23,7 @@
 
 ## Fuchsia
 - [中文社区](https://fuchsia-china.com/)
+- [Git](https://fuchsia.googlesource.com/)
 
 ## GN
 > 用于生成ninja构建文件
