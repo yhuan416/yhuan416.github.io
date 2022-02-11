@@ -1,3 +1,3 @@
-## Welcome to yhuan's docsify
+# Welcome to yhuan's docsify
 
-> An awesome project.
+> 分享开发旅途中的风景~

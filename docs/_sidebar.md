@@ -1,4 +1,6 @@
-<!-- docs/_sidebar.md -->
+<!-- _sidebar.md -->
 
 * [Home](/)
 * [Nodejs](/nodejs/)
+* [OpenHarmonyOS](/OpenHarmonyOS/)
+* [Links](/link/)
