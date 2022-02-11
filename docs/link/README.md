@@ -27,6 +27,8 @@
 ## GN
 > 用于生成ninja构建文件
 - [GN](https://gn.googlesource.com/gn/)
+- [docs.google.com](https://docs.google.com/presentation/d/15Zwb53JcncHfEwHpnG_PoIbbzQ3GQi_cpujYwbpcbZo/htmlpresent)
+- [gn help](https://gn.googlesource.com/gn/+/master/docs/reference.md)
 
 ## ninja
 > 一个构建工具
