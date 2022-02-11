@@ -1,5 +1,7 @@
-# [Nodejs](https://nodejs.org/en/)
+# Nodejs
 ---
+> 记录[nodejs](https://nodejs.org/en/)安装以及使用的过程  
+
 ## Linux安装
 
 假设需要将nodejs安装到 /root/tools
