@@ -1,6 +1,6 @@
 <!-- _navbar.md -->
 
-* 分类
+* 开发
     * [Nodejs](/nodejs/)
     * [OpenHarmonyOS](/OpenHarmonyOS/)
 
