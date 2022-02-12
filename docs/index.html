@@ -15,7 +15,7 @@
   <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/dolphin.css"> -->
 
   <!-- gitalk -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
 </head>
 <body>
@@ -69,6 +69,55 @@
         '/.*/_sidebar.md': '/_sidebar.md', // See #301
         '/.*/_navbar.md': '/_navbar.md',
       },
+
+      beian: {
+        debug: false,                   // bool                 default : false
+        align: "left",                  // string [text-align]  default: "left"
+        ICP: "粤ICP备2020079933-1号",   // string                default : ""
+        NISMSP: {
+            text: "",                   // string                default : ""
+            url: "",                    // string                default : ""
+            code: ""                    // string                default : ""
+        },
+      },
+
+      progress: {
+        position: "top",
+        color: "var(--theme-color,#42b983)",
+        height: "5px",
+      },
+
+      charty: {
+        "theme": "#EE5599",
+        "mode":  "light",
+        "debug": false
+      },
+
+      customPageTitle: {
+        prefix:     "yhuan",        // [optional] title prefix. default: false eg: prefix: "Application"
+        suffix:     false,          // [optional] title suffix. default: false eg: suffix: "v1.0.0"
+        seprator:   '|',            // [optional] seprator for title eg: title->   prefix | title | suffix
+        debug:      false,          // [optional] should debug
+      },
+
+      customPageFooter: {
+        debug: false,                   // for debugging
+
+        showPoweredBy: true,            // should show powered by docsify at right
+        copyrightYear: '',              // show copyright year, default current year.
+        showCopyright: true,            // set to false to hide default copyright
+        // copyright: "copyright &copy; 2022 " + '<a href="' + 'https://github.com/yhuan416' + '" target="_blank">' + 'yhuan416' + "</a>.",           // set this to html string to use custom copyrihgt section
+        copyrightOwnerName: 'yhuan416',         // copyright owner name
+        copyrightOwnerLink: 'https://github.com/yhuan416',  // copyright owner link if any
+        copyrightExtra: undefined,      // any exta text to show below copyright owner section
+
+        useLocalStorage: false,          // build and store footer in localstorage for quick access
+      },
+
+      timeUpdater: {
+        text: "---\n<div style='color:black;text-align:right'>Update Time: {docsify-updated}</div>",
+        formatUpdated: "{YYYY}-{MM}-{DD}",
+      },
     }
   </script>
   <!-- Docsify v4 -->
@@ -77,14 +126,16 @@
   <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/emoji.min.js"></script>
 
-  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code@2/dist/docsify-copy-code.min.js"></script>
 
-  <script src="//unpkg.com/docsify-count/dist/countable.min.js"></script>
+  <!-- count -->
+  <script src="//unpkg.com/docsify-count@1/dist/countable.min.js"></script>
 
-  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <!-- pagination -->
+  <script src="//unpkg.com/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
 
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/gitalk.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
   <script>
     const gitalk = new Gitalk({
       clientID: 'c96f709a2f002a554767',
@@ -113,5 +164,27 @@
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-http.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-javascript.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+
+  <!-- beian -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/docsify-beian@latest/dist/beian.min.js"></script> -->
+  <link rel="stylesheet" href="./scripts/beian/beian.css">
+  <script src="./scripts/beian/beian.js"></script>
+
+  <!-- progress -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-progress@latest/dist/progress.min.js"></script>
+
+  <!-- charty -->
+  <script src="//cdn.jsdelivr.net/npm/@markbattistella/docsify-charty@latest"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@markbattistella/docsify-charty@latest/dist/docsify-charty.min.css">
+
+  <!-- customPageTitle -->
+  <script src="//cdn.jsdelivr.net/npm/@sujaykumarh/docsify-plugin-title@1.x/dist/plugin.min.js"></script>
+
+  <!-- customPageFooter -->
+  <script src="//cdn.jsdelivr.net/npm/@sujaykumarh/docsify-plugin-footer@1.x/dist/plugin.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@sujaykumarh/docsify-plugin-footer@1.x/dist/plugin.min.css">
+
+  <!-- timeUpdater -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-updated@1/src/time-updater.min.js"></script>
 </body>
 </html>
