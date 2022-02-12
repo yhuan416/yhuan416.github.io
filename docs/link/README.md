@@ -23,17 +23,18 @@
 
 ## Fuchsia
 - [中文社区](https://fuchsia-china.com/)
-- [Git](https://fuchsia.googlesource.com/)
+- [Git repositories on fuchsia](https://fuchsia.googlesource.com/)
 
 ## GN
 > 用于生成ninja构建文件
-- [GN](https://gn.googlesource.com/gn/)
+- [Git repository of GN](https://gn.googlesource.com/gn/)
 - [docs.google.com](https://docs.google.com/presentation/d/15Zwb53JcncHfEwHpnG_PoIbbzQ3GQi_cpujYwbpcbZo/htmlpresent)
 - [gn help](https://gn.googlesource.com/gn/+/master/docs/reference.md)
 
 ## ninja
 > 一个构建工具
 - [ninja](https://ninja-build.org/)
+- [Github](https://github.com/ninja-build/ninja)
 
 ## clashofclans
 > 部落冲突api
