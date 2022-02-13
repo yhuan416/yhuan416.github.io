@@ -34,20 +34,24 @@ var _hmt = _hmt || [];
       };
   }
 
-  function collect() {
-    if (!window.BaiduTongJi) {
-      init($docsify.BaiduTongJi);
-    }
-  }
+  // function collect() {
+  //   if (!window.BaiduTongJi) {
+  //     init($docsify.BaiduTongJi);
+  //   }
+  // }
 
-  var install = function(hook) {
+  var plugin = function(hook, vm) {
     if (!$docsify.BaiduTongJi) {
       console.error('[Docsify] BaiduTongJi is required.');
       return;
     }
 
-    hook.beforeEach(collect);
+    hook.beforeEach(function() {
+      if (!window.BaiduTongJi) {
+        init($docsify.BaiduTongJi);
+      }
+    });
   };
 
-  $docsify.plugins = [].concat(install, $docsify.plugins);
+  $docsify.plugins = [].concat(plugin, $docsify.plugins);
 })();
