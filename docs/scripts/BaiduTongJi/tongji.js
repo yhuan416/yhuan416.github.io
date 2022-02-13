@@ -17,9 +17,10 @@ var _hmt = _hmt || [];
 //   var s = document.getElementsByTagName("script")[0]; 
 //   s.parentNode.insertBefore(hm, s);
 
-  function appendScript() {
+  function appendScript(code) {
     var hm = document.createElement('script');
-    hm.src = "https://hm.baidu.com/hm.js?030e1e62da5455adb0328a84fbf7ec93";
+    // hm.src = "https://hm.baidu.com/hm.js?030e1e62da5455adb0328a84fbf7ec93";
+    hm.src = "https://hm.baidu.com/hm.js?" + code;
     //   document.head.appendChild(hm);
     var s = document.getElementsByTagName("script")[0]; 
     s.parentNode.insertBefore(hm, s);
@@ -49,7 +50,7 @@ var _hmt = _hmt || [];
     hook.beforeEach(function() {
       if (!window.BaiduTongJi) {
         // init($docsify.BaiduTongJi);
-        appendScript();
+        appendScript($docsify.BaiduTongJi.code);
         window.BaiduTongJi =
           window.BaiduTongJi ||
           function() {
