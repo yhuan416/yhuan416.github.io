@@ -23,7 +23,7 @@ var _hmt = _hmt || [];
     var hm = document.createElement('script');
     // hm.src = "https://hm.baidu.com/hm.js?030e1e62da5455adb0328a84fbf7ec93";
     hm.src = "https://hm.baidu.com/hm.js?" + code;
-    hm.id = "baidu_tongji";
+    // hm.id = "baidu_tongji";
     var s = document.getElementsByTagName("script")[0]; 
     s.parentNode.insertBefore(hm, s);
   }
@@ -60,24 +60,24 @@ var _hmt = _hmt || [];
 
     hook.beforeEach(function() {
 
-      var _baidu_tongji = document.getElementById("baidu_tongji");
-      if (!_baidu_tongji) {
-        console.log("_baidu_tongji no found");
-        appendScript(BaiduTongJiOptions.code);
-      }
+      // var _baidu_tongji = document.getElementById("baidu_tongji");
+      // if (!_baidu_tongji) {
+      //   console.log("_baidu_tongji no found");
+      //   appendScript(BaiduTongJiOptions.code);
+      // }
 
-        // if (!window.BaiduTongJi) {
+        if (!window.BaiduTongJi) {
+
+          window.BaiduTongJi = window.$docsify.BaiduTongJi;
     
-        //   window.BaiduTongJi = window.$docsify.BaiduTongJi;
-    
-        // //   init($docsify.BaiduTongJi);
-        //   appendScript(window.BaiduTongJi.code);
-        //   // window.BaiduTongJi =
-        //   //   window.BaiduTongJi ||
-        //   //   function() {
-        //   //     (window.BaiduTongJi.code = window.BaiduTongJi.code || []).push(arguments);
-        //   //   };
-        // }
+        //   init($docsify.BaiduTongJi);
+          appendScript(window.BaiduTongJi.code);
+          // window.BaiduTongJi =
+          //   window.BaiduTongJi ||
+          //   function() {
+          //     (window.BaiduTongJi.code = window.BaiduTongJi.code || []).push(arguments);
+          //   };
+        }
     });
   };
 
