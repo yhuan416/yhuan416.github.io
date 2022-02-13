@@ -16,6 +16,7 @@ var _hmt = _hmt || [];
     var hm = document.createElement('script');
     // hm.src = "https://hm.baidu.com/hm.js?030e1e62da5455adb0328a84fbf7ec93";
     hm.src = "https://hm.baidu.com/hm.js?" + code;
+    hm.id = "baidu_tongji";
     //   document.head.appendChild(hm);
     var s = document.getElementsByTagName("script")[0]; 
     s.parentNode.insertBefore(hm, s);
