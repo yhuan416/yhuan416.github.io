@@ -11,7 +11,7 @@ var _hmt = _hmt || [];
 */
 "use strict";
 var _hmt = _hmt || [];
-// (function() {
+(function() {
 
   const BaiduTongJiOptions = {
     debug: false,
@@ -81,4 +81,4 @@ var _hmt = _hmt || [];
 
   window.$docsify.BaiduTongJi = Object.assign(BaiduTongJiOptions, window.$docsify.BaiduTongJi);
   window.$docsify.plugins = [].concat(plugin, window.$docsify.plugins);
-// })();
+})();
