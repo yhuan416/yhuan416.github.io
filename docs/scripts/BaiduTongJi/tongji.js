@@ -44,15 +44,23 @@ var _hmt = _hmt || [];
     }
 
     hook.beforeEach(function() {
-      if (!window.BaiduTongJi) {
-        // init($docsify.BaiduTongJi);
+      var _baidu_tongji = document.getElementById("baidu_tongji");
+      if (!_baidu_tongji) {
         appendScript($docsify.BaiduTongJi.code);
-        window.BaiduTongJi =
-          window.BaiduTongJi ||
-          function() {
-            (window.BaiduTongJi.code = window.BaiduTongJi.code || []).push(arguments);
-          };
+      } else {
+        console.log("baidu_tongji exists")
       }
+
+
+      // if (!window.BaiduTongJi) {
+      //   // init($docsify.BaiduTongJi);
+      //   appendScript($docsify.BaiduTongJi.code);
+      //   window.BaiduTongJi =
+      //     window.BaiduTongJi ||
+      //     function() {
+      //       (window.BaiduTongJi.code = window.BaiduTongJi.code || []).push(arguments);
+      //     };
+      // }
     });
   };
 
