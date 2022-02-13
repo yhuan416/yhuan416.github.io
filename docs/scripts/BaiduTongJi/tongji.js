@@ -9,78 +9,45 @@ var _hmt = _hmt || [];
 })();
 </script>
 */
-"use strict";
 var _hmt = _hmt || [];
 (function() {
 
-  const BaiduTongJiOptions = {
-    debug: false,
-    code: "",
-  };
+//   var hm = document.createElement("script");
+//   hm.src = "https://hm.baidu.com/hm.js?030e1e62da5455adb0328a84fbf7ec93";
+//   var s = document.getElementsByTagName("script")[0]; 
+//   s.parentNode.insertBefore(hm, s);
 
-  function appendScript(code) {
-    console.log("appendScript");
+  function appendScript() {
     var hm = document.createElement('script');
-    // hm.src = "https://hm.baidu.com/hm.js?030e1e62da5455adb0328a84fbf7ec93";
-    hm.src = "https://hm.baidu.com/hm.js?" + code;
-    // hm.id = "baidu_tongji";
+    hm.src = "https://hm.baidu.com/hm.js?030e1e62da5455adb0328a84fbf7ec93";
+    //   document.head.appendChild(hm);
     var s = document.getElementsByTagName("script")[0]; 
     s.parentNode.insertBefore(hm, s);
   }
 
-  // function init(id) {
-  //   appendScript(code);
-  //   window.BaiduTongJi =
-  //     window.BaiduTongJi ||
-  //     function() {
-  //       (window.BaiduTongJi.code = window.BaiduTongJi.code || []).push(arguments);
-  //     };
-  // }
+  function init(id) {
+    appendScript();
+    window.BaiduTongJi =
+      window.BaiduTongJi ||
+      function() {
+        (window.BaiduTongJi.code = window.BaiduTongJi.code || []).push(arguments);
+      };
+  }
 
-  // function collect() {
-  //   if (!window.BaiduTongJi) {
+  function collect() {
+    if (!window.BaiduTongJi) {
+      init($docsify.BaiduTongJi);
+    }
+  }
 
-  //     window.BaiduTongJi = window.$docsify.BaiduTongJi;
-
-  //   //   init($docsify.BaiduTongJi);
-  //     appendScript(window.BaiduTongJi.code);
-  //     // window.BaiduTongJi =
-  //     //   window.BaiduTongJi ||
-  //     //   function() {
-  //     //     (window.BaiduTongJi.code = window.BaiduTongJi.code || []).push(arguments);
-  //     //   };
-  //   }
-  // }
-
-  var plugin = function(hook) {
-    if (BaiduTongJiOptions.code.length === 0) {
-      console.error('[BaiduTongJi] "code" is required.');
+  var install = function(hook) {
+    if (!$docsify.BaiduTongJi) {
+      console.error('[Docsify] BaiduTongJi is required.');
       return;
     }
 
-    hook.beforeEach(function() {
-
-      // var _baidu_tongji = document.getElementById("baidu_tongji");
-      // if (!_baidu_tongji) {
-      //   console.log("_baidu_tongji no found");
-      //   appendScript(BaiduTongJiOptions.code);
-      // }
-
-        if (!window.BaiduTongJi) {
-
-          window.BaiduTongJi = window.$docsify.BaiduTongJi;
-    
-        //   init($docsify.BaiduTongJi);
-          appendScript(window.BaiduTongJi.code);
-          // window.BaiduTongJi =
-          //   window.BaiduTongJi ||
-          //   function() {
-          //     (window.BaiduTongJi.code = window.BaiduTongJi.code || []).push(arguments);
-          //   };
-        }
-    });
+    hook.beforeEach(collect);
   };
 
-  window.$docsify.BaiduTongJi = Object.assign(BaiduTongJiOptions, window.$docsify.BaiduTongJi);
-  window.$docsify.plugins = [].concat(plugin, window.$docsify.plugins);
+  $docsify.plugins = [].concat(install, $docsify.plugins);
 })();
