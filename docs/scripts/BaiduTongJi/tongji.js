@@ -25,14 +25,14 @@ var _hmt = _hmt || [];
     s.parentNode.insertBefore(hm, s);
   }
 
-  function init(id) {
-    appendScript();
-    window.BaiduTongJi =
-      window.BaiduTongJi ||
-      function() {
-        (window.BaiduTongJi.code = window.BaiduTongJi.code || []).push(arguments);
-      };
-  }
+  // function init(id) {
+  //   appendScript();
+  //   window.BaiduTongJi =
+  //     window.BaiduTongJi ||
+  //     function() {
+  //       (window.BaiduTongJi.code = window.BaiduTongJi.code || []).push(arguments);
+  //     };
+  // }
 
   // function collect() {
   //   if (!window.BaiduTongJi) {
@@ -48,7 +48,13 @@ var _hmt = _hmt || [];
 
     hook.beforeEach(function() {
       if (!window.BaiduTongJi) {
-        init($docsify.BaiduTongJi);
+        // init($docsify.BaiduTongJi);
+        appendScript();
+        window.BaiduTongJi =
+          window.BaiduTongJi ||
+          function() {
+            (window.BaiduTongJi.code = window.BaiduTongJi.code || []).push(arguments);
+          };
       }
     });
   };
