@@ -19,6 +19,7 @@ var _hmt = _hmt || [];
   };
 
   function appendScript(code) {
+    console.log("appendScript");
     var hm = document.createElement('script');
     // hm.src = "https://hm.baidu.com/hm.js?030e1e62da5455adb0328a84fbf7ec93";
     hm.src = "https://hm.baidu.com/hm.js?" + code;
@@ -57,10 +58,11 @@ var _hmt = _hmt || [];
       return;
     }
 
-    hook.init(function() {
+    hook.beforeEach(function() {
 
       var _baidu_tongji = document.getElementById("baidu_tongji");
       if (!_baidu_tongji) {
+        console.log("_baidu_tongji no found");
         appendScript(BaiduTongJiOptions.code);
       }
 
