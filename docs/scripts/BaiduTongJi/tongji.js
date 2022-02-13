@@ -12,11 +12,6 @@ var _hmt = _hmt || [];
 var _hmt = _hmt || [];
 (function() {
 
-//   var hm = document.createElement("script");
-//   hm.src = "https://hm.baidu.com/hm.js?030e1e62da5455adb0328a84fbf7ec93";
-//   var s = document.getElementsByTagName("script")[0]; 
-//   s.parentNode.insertBefore(hm, s);
-
   function appendScript(code) {
     var hm = document.createElement('script');
     // hm.src = "https://hm.baidu.com/hm.js?030e1e62da5455adb0328a84fbf7ec93";
@@ -42,7 +37,7 @@ var _hmt = _hmt || [];
   // }
 
   var plugin = function(hook, vm) {
-    if (!$docsify.BaiduTongJi) {
+    if (!$docsify.BaiduTongJi || !$docsify.BaiduTongJi.code.length === 0) {
       console.error('[Docsify] BaiduTongJi is required.');
       return;
     }
