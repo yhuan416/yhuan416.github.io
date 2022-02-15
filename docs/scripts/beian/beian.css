@@ -1,8 +1,6 @@
-#beianFooter {
-	border-top:1px solid #e5e5e5;
-	margin:auto;
-	max-width:80%;
-	padding-bottom:2rem;
-	padding-top:2rem;
-	width:100%
-}
+/**
+ * MIT License
+ * Copyright (c) 2022 yhuan416
+ * Github (@yhuan416)
+ */
+#beianFooter{border-top:1px solid #e5e5e5;margin:auto;max-width:80%;padding-bottom:2rem;padding-top:2rem;width:100%}
