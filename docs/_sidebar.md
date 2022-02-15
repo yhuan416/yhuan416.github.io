@@ -1,9 +1,9 @@
 <!-- _sidebar.md -->
 
 * [Home](/)
-* [docsify](/docsify/docsify.md)
+* [docsify](/docsify/)
 * [Nodejs](/nodejs/)
 * [MQTT](/MQTT/)
 * [OpenHarmonyOS](/OpenHarmonyOS/)
-* [Links](/link/)
+* [Lists](/link/)
 * [Note](/note/)
