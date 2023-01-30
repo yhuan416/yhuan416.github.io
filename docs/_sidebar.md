@@ -5,5 +5,7 @@
 * [Nodejs](/nodejs/)
 * [MQTT](/MQTT/)
 * [OpenHarmonyOS](/OpenHarmonyOS/)
+* [WireGuard](/WireGuard/)
+* [Git](/Git/)
 * [Lists](/link/)
 * [Note](/note/)
