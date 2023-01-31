@@ -71,3 +71,6 @@
 
 ## shields.io
 - [shields.io](https://shields.io/)
+
+## jsdelivr - A free CDN for open source projects
+- [jsdelivr](https://www.jsdelivr.com/)
