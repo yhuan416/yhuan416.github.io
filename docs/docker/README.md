@@ -68,3 +68,24 @@ docker run [opt] ${image_name} [cmd]
 ```
 	docker volume inspect ${volume_name}
 ```
+
+## 删除容器卷
+```
+    docker volume rm ${volume_name}
+```
+
+## 查看容器信息
+```
+    docker inspect ${容器名或者容器id}
+```
+
+## 查看容器内进程
+```
+    docker top ${容器名或者容器id}
+```
+
+## 进入容器
+```
+    docker exec -it ${容器名或者容器id} /bin/bash
+    docker exec -it ${容器名或者容器id} ${cmd}
+```
