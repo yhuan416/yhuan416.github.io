@@ -22,7 +22,8 @@ docker run [opt] ${image_name} [cmd]
 
 常见参数
 ```
-    -it     输入输出
+    -t      在新容器内指定一个伪终端或终端
+    -i      允许你对容器内的标准输入 (STDIN) 进行交互
     -d      后台运行
     -p ${HOST PORT}:${CONTAINER PORT} 将容器的端口映射到宿主机上
     -v ${HOST DIR}:${CONTAINER DIR} 将容器的目录映射到宿主机上
