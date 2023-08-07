@@ -2,6 +2,9 @@
 ---
 > 记录[nodejs](https://nodejs.org/en/)安装以及使用的过程  
 
+[nodejs](https://nodejs.org/zh-cn)  
+[dist](https://nodejs.org/dist/)  
+
 ## Linux安装
 
 假设需要将nodejs安装到 /root/tools
