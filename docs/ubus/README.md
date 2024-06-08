@@ -14,8 +14,6 @@
 
 [ubus wiki](https://openwrt.org/docs/techref/ubus)
 
-[参考文档](https://blog.csdn.net/qq_41453285/article/details/102595943)
-
 
 
 ## ubus简介
@@ -440,4 +438,17 @@ Failed to add object: Invalid argument
 如果全程使用root账户也许就不会遇到这个问题（？）
 
 
+
+## 参考文档
+
+
+
+1. [Openwrt从小白到专家：ubus总线和uci](https://blog.csdn.net/whstudio123/article/details/120811616)
+
+2. [OpenWrt开发必备软件模块——系统总线ubus](https://blog.csdn.net/qq_41453285/article/details/102595943)
+
+3. [ubuntu编译ubus及相关依赖库](https://blog.csdn.net/a29562268/article/details/89054122)
+
+4. [ubuntu安装UCI](https://blog.csdn.net/rainforest_c/article/details/70142987)
+5. [使用ubus实现进程通信](https://www.cnblogs.com/LiuYanYGZ/p/14204757.html)
 
