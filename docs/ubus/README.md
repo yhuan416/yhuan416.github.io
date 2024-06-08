@@ -108,7 +108,7 @@ make install
 
 make install完成后，相关库文件会生成在/home/yhuan/workspace/ubus/install路径下
 
-![json-c构建结果](json-c构建结果.png)
+![json-c构建结果](json-c.png)
 
 
 
@@ -128,7 +128,7 @@ make install
 
 -DBUILD_LUA=OFF：不构建lua相关代码
 
-![libubox构建结果](./libubox构建结果.png)
+![libubox构建结果](./libubox.png)
 
 
 
@@ -146,7 +146,7 @@ make
 make install
 ```
 
-![ubus构建结果](./ubus构建结果.png)
+![ubus构建结果](./ubus.png)
 
 ​	其中，ubusd是后台服务程序，所有服务启动之后需要向ubusd注册。ubus可以用于命令行调试。
 
