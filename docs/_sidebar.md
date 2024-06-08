@@ -11,5 +11,6 @@
 * [http](/http/)
 * [jenkins](/jenkins/)
 * [libuv](/libuv/)
+* [ubus](/ubus/)
 * [Lists](/link/)
 * [Note](/note/)
